@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toh Theam Hock &amp; Co — Advocates &amp; Solicitors since 1958 | Taiping, Perak</title>
+<meta name="description" content="Established in Taiping in 1958. Conveyancing, banking and finance, corporate and estate law across six offices in Perak and Penang. Panel lawyers to seventeen banking institutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Archivo:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c1712;
+  --green:#163026;
+  --green-2:#1f4436;
+  --green-3:#2b5a48;
+  --brass:#ab8337;
+  --brass-lt:#d9c08a;
+  --paper:#e9e7dd;
+  --paper-2:#dcd9cc;
+  --slate:#5f6d65;
+  --rule:rgba(12,23,18,.16);
+  --display:"Spectral",Georgia,serif;
+  --util:"Archivo",system-ui,sans-serif;
+  --cn:"Noto Serif SC",serif;
+  --pad:clamp(1.25rem,5vw,5rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--display);font-weight:400;font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3{letter-spacing:-.012em}
+
+/* paper grain — very low opacity, adds material weight */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.label{font-family:var(--util);font-size:.66rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--slate)}
+.brass-rule{height:1px;background:linear-gradient(90deg,var(--brass),rgba(171,131,55,0));border:0;margin:0}
+
+/* ---------- masthead ---------- */
+.mast{position:sticky;top:0;z-index:60;background:var(--green);color:var(--paper);
+  border-bottom:1px solid rgba(217,192,138,.28)}
+.mast__in{display:flex;align-items:center;gap:1.4rem;padding:.65rem var(--pad)}
+.mast__lock{display:flex;align-items:baseline;gap:.75rem;min-width:0}
+.mast__name{font-size:1.02rem;font-weight:500;white-space:nowrap}
+.mast__cn{font-family:var(--cn);color:var(--brass-lt);font-size:.95rem;white-space:nowrap}
+.mast__est{font-family:var(--util);font-size:.6rem;font-weight:600;letter-spacing:.2em;
+  color:var(--brass-lt);border-left:1px solid rgba(217,192,138,.4);padding-left:.8rem;white-space:nowrap}
+.mast__nav{display:flex;gap:1.5rem;font-family:var(--util);font-size:.71rem;
+  font-weight:500;letter-spacing:.13em;text-transform:uppercase}
+.mast__nav a{color:inherit;text-decoration:none;opacity:.8;padding-bottom:3px;border-bottom:1px solid transparent}
+.mast__nav a:hover{opacity:1;border-bottom-color:var(--brass)}
+.mast__lang{margin-left:auto;font-family:var(--util);font-size:.68rem;font-weight:700;
+  letter-spacing:.08em;color:var(--brass-lt);text-decoration:none;border:1px solid rgba(217,192,138,.4);
+  padding:.3rem .55rem;border-radius:2px}
+.mast__lang:hover{background:rgba(171,131,55,.18)}
+@media(max-width:900px){.mast__nav{margin-left:0}}
+
+/* mobile menu — hamburger toggle, no JS framework needed */
+.mast__burger{display:none;margin-left:auto;background:none;border:0;padding:.4rem;cursor:pointer}
+.mast__burger span{display:block;width:22px;height:2px;background:var(--paper);margin:5px 0;transition:transform .25s ease,opacity .25s ease}
+#mast-toggle{display:none}
+@media(max-width:900px){
+  .mast__est{display:none}
+  .mast__burger{display:block}
+  .mast__nav{
+    position:absolute;top:100%;left:0;right:0;background:var(--green);flex-direction:column;gap:0;
+    max-height:0;overflow:hidden;transition:max-height .3s ease;border-bottom:1px solid rgba(217,192,138,.28);
+  }
+  .mast__nav a{padding:1rem var(--pad);border-bottom:1px solid rgba(233,231,221,.1)}
+  #mast-toggle:checked ~ .mast__nav{max-height:20rem}
+  #mast-toggle:checked ~ .mast__burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  #mast-toggle:checked ~ .mast__burger span:nth-child(2){opacity:0}
+  #mast-toggle:checked ~ .mast__burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--green);color:var(--paper);overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:#122a21 center/cover no-repeat;
+  background-image:url("assets/images/facade.jpg");
+  filter:grayscale(.35) contrast(1.05);opacity:.4}
+.hero__bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(22,48,38,.72) 0%,rgba(12,23,18,.94) 82%)}
+.hero__in{position:relative;padding:clamp(4rem,11vw,9rem) var(--pad) clamp(3rem,6vw,4.5rem);max-width:1240px}
+
+/* the plaque — brass lockup, like the plate outside the office */
+.plaque{display:inline-block;border:1px solid rgba(217,192,138,.45);padding:1rem 1.6rem;margin-bottom:2.4rem}
+.plaque__cn{font-family:var(--cn);font-weight:600;font-size:1.5rem;color:var(--brass-lt);
+  line-height:1;margin-bottom:.5rem;letter-spacing:.06em}
+.plaque__en{font-family:var(--util);font-size:.63rem;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:rgba(233,231,221,.72)}
+
+.hero h1{font-weight:400;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.08;margin:0 0 1.6rem;max-width:17ch}
+.hero h1 em{font-style:italic;color:var(--brass-lt)}
+.hero__sub{max-width:52ch;font-size:1.06rem;color:rgba(233,231,221,.8);margin:0 0 2.6rem}
+.hero__cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:var(--util);font-size:.74rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;padding:1rem 1.9rem;text-decoration:none;border:1px solid var(--brass);
+  transition:background .3s ease,color .3s ease}
+.btn--solid{background:var(--brass);color:#0c1712}
+.btn--solid:hover{background:var(--brass-lt)}
+.btn--ghost{color:var(--brass-lt)}
+.btn--ghost:hover{background:rgba(171,131,55,.16)}
+
+/* ---------- credential band ---------- */
+.creds{background:var(--ink);color:var(--paper);border-top:1px solid rgba(217,192,138,.3);
+  display:grid;grid-template-columns:repeat(5,1fr)}
+.creds div{padding:2rem 1.4rem;border-right:1px solid rgba(233,231,221,.13)}
+.creds div:last-child{border-right:0}
+.creds dt{font-family:var(--util);font-size:.6rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(233,231,221,.5);margin-bottom:.6rem}
+.creds dd{margin:0;font-size:clamp(1.5rem,2.6vw,2.15rem);font-weight:400;color:var(--brass-lt)}
+@media(max-width:900px){.creds{grid-template-columns:repeat(2,1fr)}
+  .creds div{border-bottom:1px solid rgba(233,231,221,.13)}}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(3.5rem,8vw,7rem) var(--pad)}
+.sec__head{margin-bottom:3rem;max-width:1240px}
+.sec__head h2{font-weight:400;font-size:clamp(1.8rem,3.8vw,2.8rem);margin:.7rem 0 .9rem}
+.sec__head p{max-width:60ch;color:var(--slate);margin:0}
+.sec__head .brass-rule{width:3.5rem;margin-bottom:1.2rem}
+
+/* ---------- heritage ---------- */
+.heritage{background:var(--paper-2)}
+.heritage__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start;max-width:1240px}
+.heritage p{margin:0 0 1.15rem}
+.heritage p:first-of-type{font-size:1.14rem}
+.slot{background:#cdcabc;border:1px dashed rgba(12,23,18,.3);aspect-ratio:4/5;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.slot span{font-family:var(--util);font-size:.68rem;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;color:#5a5a4d;line-height:1.9;max-width:24ch}
+.heritage__photo{aspect-ratio:4/5;overflow:hidden}
+.heritage__photo img{width:100%;height:100%;object-fit:cover}
+@media(max-width:820px){.heritage__grid{grid-template-columns:1fr}.slot,.heritage__photo{aspect-ratio:4/3}}
+
+/* ---------- practice ---------- */
+.areas{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;max-width:1240px}
+.area{border-top:2px solid var(--ink);padding-top:1.5rem}
+.area__img{aspect-ratio:3/2;background:var(--paper-2);overflow:hidden;margin-bottom:1.4rem}
+.area__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.area:hover .area__img img{transform:scale(1.035)}
+.area h3{font-weight:500;font-size:1.45rem;margin:0 0 .7rem}
+.area>p{margin:0 0 1.1rem;color:var(--slate)}
+.area ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.area li{padding:.6rem 0;border-bottom:1px solid var(--rule);font-size:.93rem;display:flex;gap:.85rem}
+.area li::before{content:"—";color:var(--brass);flex-shrink:0}
+@media(max-width:820px){.areas{grid-template-columns:1fr}}
+
+/* ---------- bank panel ---------- */
+.panel{background:var(--green)}
+.panel h2,.panel .label{color:var(--paper)}
+.panel .sec__head p{color:rgba(233,231,221,.7)}
+.panel .label{color:var(--brass-lt)}
+.banks{list-style:none;padding:0;margin:0 0 2.5rem;counter-reset:b;max-width:1240px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0 3rem}
+.banks li{counter-increment:b;padding:.85rem 0;border-bottom:1px solid rgba(233,231,221,.16);
+  color:rgba(233,231,221,.88);font-size:.94rem;display:flex;gap:.9rem}
+.banks li::before{content:counter(b,decimal-leading-zero);font-family:var(--util);font-size:.62rem;
+  font-weight:600;color:var(--brass);letter-spacing:.08em;padding-top:.4rem;flex-shrink:0}
+.panel__note{max-width:60ch;color:rgba(233,231,221,.55);font-size:.88rem;font-style:italic}
+@media(max-width:900px){.banks{grid-template-columns:repeat(2,1fr);gap:0 2rem}}
+@media(max-width:600px){.banks{grid-template-columns:1fr}}
+
+/* ---------- calculator ---------- */
+.calc{background:var(--paper-2)}
+.calc__wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);max-width:1240px;align-items:start}
+.calc .field{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.3rem}
+.calc label{font-family:var(--util);font-size:.66rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--slate)}
+.calc input[type="number"]{background:#fff;border:1px solid var(--rule);color:var(--ink);
+  font-family:var(--display);font-size:1.1rem;padding:.7rem .9rem;border-radius:2px}
+.calc input[type="number"]:focus{outline:2px solid var(--brass);outline-offset:1px}
+.calc .check{display:flex;align-items:center;gap:.6rem;font-family:var(--util);font-size:.82rem;color:var(--ink)}
+.calc .check input{width:1rem;height:1rem}
+.calc__result{background:var(--ink);color:var(--paper);padding:2rem clamp(1.4rem,3vw,2.4rem)}
+.calc__row{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;
+  border-bottom:1px solid rgba(233,231,221,.14);font-size:.92rem}
+.calc__row span:last-child{font-family:var(--util);white-space:nowrap}
+.calc__row--total{border-bottom:0;padding-top:1.1rem;margin-top:.4rem;border-top:2px solid var(--brass);
+  font-size:1.15rem;font-weight:500;color:var(--brass-lt)}
+.calc__note{font-size:.8rem;color:rgba(233,231,221,.55);margin-top:1.3rem;font-style:italic}
+@media(max-width:820px){.calc__wrap{grid-template-columns:1fr}}
+
+/* ---------- partners ---------- */
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;max-width:1240px}
+.person{border-top:2px solid var(--ink);padding-top:1.4rem}
+.person h3{font-weight:500;font-size:1.3rem;margin:0 0 .3rem}
+.person .meta{font-family:var(--util);font-size:.66rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--brass);margin:0 0 1rem;line-height:1.7}
+.person p.bio{margin:0 0 .8rem;font-size:.94rem;color:var(--slate)}
+.person p.prac{margin:0;font-size:.88rem;color:var(--ink);opacity:.75}
+@media(max-width:760px){.people{grid-template-columns:1fr}}
+
+/* ---------- offices ---------- */
+.offices{background:var(--paper-2)}
+.office{border-bottom:1px solid var(--rule);max-width:1240px}
+.office:first-of-type{border-top:2px solid var(--ink)}
+.office summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:1.1rem;
+  padding:1.5rem 0 1.5rem 1.4rem;position:relative;transition:padding-left .35s ease}
+.office summary::-webkit-details-marker{display:none}
+.office summary::before{content:"";position:absolute;left:0;top:1.85rem;width:0;height:1px;
+  background:var(--brass);transition:width .35s ease}
+.office:hover summary,.office[open] summary{padding-left:3.4rem}
+.office:hover summary::before,.office[open] summary::before{width:2.4rem}
+.office__town{font-size:clamp(1.6rem,3.6vw,2.35rem);font-weight:400}
+.office__tag{font-family:var(--util);font-size:.6rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brass);align-self:center}
+.office__phone{margin-left:auto;font-family:var(--util);font-size:.82rem;color:var(--slate);white-space:nowrap}
+.office__body{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;
+  padding:0 0 2.2rem 3.4rem;font-size:.92rem;color:var(--slate)}
+.office__body p{margin:0}
+.office__body b{display:block;font-family:var(--util);font-size:.6rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:.45rem}
+.office__body a{color:var(--brass);text-decoration:none;font-family:var(--util);font-size:.72rem;
+  font-weight:600;letter-spacing:.04em;display:inline-block;margin-top:.5rem}
+.office__body a:hover{text-decoration:underline}
+.flag{color:#8a3d2e;font-style:italic}
+@media(max-width:820px){
+  .office__body{grid-template-columns:1fr;gap:1.1rem;padding-left:1.4rem}
+  .office__phone{display:none}
+  .office:hover summary,.office[open] summary{padding-left:1.4rem}
+}
+
+/* ---------- quotation form ---------- */
+.quote{background:var(--green);color:var(--paper)}
+.quote .sec__head p{color:rgba(233,231,221,.72)}
+.quote form{max-width:760px;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.quote .field{display:flex;flex-direction:column;gap:.5rem}
+.quote .field--wide{grid-column:1/-1}
+.quote label{font-family:var(--util);font-size:.66rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brass-lt)}
+.quote input,.quote select,.quote textarea{
+  background:rgba(233,231,221,.08);border:1px solid rgba(217,192,138,.35);color:var(--paper);
+  font-family:var(--display);font-size:1rem;padding:.75rem .9rem;border-radius:2px;
+}
+.quote textarea{resize:vertical;min-height:7rem}
+.quote input:focus,.quote select:focus,.quote textarea:focus{outline:2px solid var(--brass);outline-offset:1px}
+.quote .field--hp{position:absolute;left:-9999px}
+.quote button{grid-column:1/-1;justify-self:start}
+
+/* ---------- notices + footer ---------- */
+.legal details{border-top:1px solid var(--rule);padding:1.1rem 0;max-width:1240px}
+.legal summary{cursor:pointer;font-family:var(--util);font-size:.76rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase}
+.legal .inner{max-width:72ch;font-size:.88rem;color:var(--slate);padding-top:1rem}
+.legal .inner h4{font-family:var(--util);font-size:.68rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink);margin:1.6rem 0 .8rem}
+.legal .inner h4:first-child{margin-top:0}
+footer{background:var(--ink);color:rgba(233,231,221,.6);padding:3.5rem var(--pad) 2rem}
+.foot__grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;max-width:1240px;margin-bottom:2.5rem}
+.foot__grid h4{font-family:var(--util);font-size:.62rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-lt);margin:0 0 1rem}
+.foot__grid p,.foot__grid li{font-size:.85rem;margin:0 0 .45rem}
+.foot__grid ul{list-style:none;padding:0;margin:0}
+.foot__cn{font-family:var(--cn);color:var(--brass-lt);font-size:1.15rem;margin-bottom:.5rem}
+.foot__bar{border-top:1px solid rgba(233,231,221,.16);padding-top:1.5rem;font-family:var(--util);
+  font-size:.72rem;letter-spacing:.05em;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media(max-width:820px){.foot__grid{grid-template-columns:1fr}}
+
+/* ---------- motion ---------- */
+.rise{opacity:0;transform:translateY(20px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rise{opacity:1;transform:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="mast">
+  <div class="mast__in">
+    <input type="checkbox" id="mast-toggle" aria-hidden="true">
+    <div class="mast__lock">
+      <span class="mast__name">Toh Theam Hock &amp; Co</span>
+      <span class="mast__cn">杜添福律师楼</span>
+      <span class="mast__est">Est. 1958</span>
+    </div>
+    <label class="mast__burger" for="mast-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
+    <a class="mast__lang" href="index-ms.html">BM</a>
+    <nav class="mast__nav">
+      <a href="#heritage">The firm</a>
+      <a href="#practice">Practice</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#panel">Bank panel</a>
+      <a href="#partners">Partners</a>
+      <a href="#offices">Offices</a>
+      <a href="#quote">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__in">
+    <div class="plaque">
+      <div class="plaque__cn">杜添福律师楼</div>
+      <div class="plaque__en">Advocates &amp; Solicitors · Peguambela &amp; Peguamcara</div>
+    </div>
+    <h1>Perak's property and banking lawyers since <em>1958</em>.</h1>
+    <p class="hero__sub">
+      Founded in Taiping and still practising from Jalan Kota, Toh Theam Hock &amp; Co is one of
+      the oldest legal establishments operating in Perak. Thirteen lawyers and more than a hundred
+      support staff act for homebuyers, developers and seventeen banking institutions from six
+      offices across Perak and Penang.
+    </p>
+    <div class="hero__cta">
+      <a class="btn btn--solid" href="#quote">Request a quotation</a>
+      <a class="btn btn--ghost" href="#offices">Find your nearest office</a>
+    </div>
+  </div>
+</header>
+
+<dl class="creds">
+  <div><dt>In practice</dt><dd><span id="years">68</span> years</dd></div>
+  <div><dt>Clients served</dt><dd>50,000+</dd></div>
+  <div><dt>Lawyers</dt><dd>13</dd></div>
+  <div><dt>Support staff</dt><dd>100+</dd></div>
+  <div><dt>Bank panels</dt><dd>17</dd></div>
+</dl>
+
+<!-- ============ HERITAGE ============ -->
+<section class="sec heritage rise" id="heritage">
+  <div class="heritage__grid">
+    <div>
+      <p class="label">The firm</p>
+      <hr class="brass-rule" style="width:3.5rem;margin-bottom:1.2rem">
+      <h2 style="font-weight:400;font-size:clamp(1.8rem,3.8vw,2.8rem);margin:0 0 1.5rem">
+        Sixty-eight years on the same street.
+      </h2>
+      <p>Toh Theam Hock &amp; Co was founded in Taiping in 1958 and has practised continuously
+        from Perak ever since — through the transition to independence, the land reforms, and
+        six decades of the state's property market.</p>
+      <p>That longevity is the firm's working advantage. Conveyancing in Perak is a matter of
+        knowing the land offices, the developers and the bank officers personally. Files that
+        stall elsewhere move here because someone at the firm has run the same transaction
+        several hundred times before.</p>
+      <p>The practice today is led by four partners and spans conveyancing, banking and finance,
+        corporate and commercial work, and family and estate matters. More than 50,000 clients
+        have been served since the doors opened.</p>
+    </div>
+    <div class="heritage__photo">
+      <img src="assets/images/facade.jpg" alt="Illustrated elevation of the Taiping premises, 16 Jalan Kota">
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRACTICE ============ -->
+<section class="sec rise" id="practice">
+  <div class="sec__head">
+    <p class="label">What we do</p>
+    <hr class="brass-rule">
+    <h2>Practice areas</h2>
+    <p>The firm's weight sits in property transactions and banking documentation, built over six
+      decades of land office and bank panel work in northern Perak and Penang.</p>
+  </div>
+  <div class="areas">
+
+    <article class="area">
+      <div class="area__img"><img src="https://tohth.com/assets/images/image02.jpg" alt="Conveyancing and real estate" loading="lazy"></div>
+      <h3>Conveyancing &amp; real estate</h3>
+      <p>Recognised for legal work across residential, commercial, office and industrial
+        developments — from project inception through to perfection of title and charge.</p>
+      <ul>
+        <li>Project conveyancing for residential, commercial and mixed-use developments</li>
+        <li>Management agreements, leases and tenancies</li>
+        <li>Sub-sale transactions and individual unit sales</li>
+        <li>Construction law, regulatory compliance and government policy alignment</li>
+      </ul>
+    </article>
+
+    <article class="area">
+      <div class="area__img"><img src="https://tohth.com/assets/images/image03.jpg" alt="Banking and finance" loading="lazy"></div>
+      <h3>Banking &amp; finance</h3>
+      <p>Acting for local and international banks and financial institutions in Malaysia on
+        conventional and Islamic facilities, including high-value loans secured on foreign
+        corporate securities.</p>
+      <ul>
+        <li>Facility agreements and security documentation</li>
+        <li>Corporate, commercial, retail and housing facilities</li>
+        <li>Islamic banking products</li>
+        <li>Enforcement of security and debt recovery</li>
+      </ul>
+    </article>
+
+    <article class="area">
+      <div class="area__img"><img src="https://tohth.com/assets/images/image04.jpg" alt="Corporate and commercial" loading="lazy"></div>
+      <h3>Corporate &amp; commercial</h3>
+      <p>Advising local and international investors on establishing, structuring, maintaining and
+        disposing of Malaysian businesses across a range of sectors.</p>
+      <ul>
+        <li>Incorporation, capital reduction and corporate restructuring</li>
+        <li>Mergers and acquisitions of companies, businesses and undertakings</li>
+        <li>Shareholders' agreements and employee share option schemes</li>
+        <li>Licensing, franchising, agency, distributorship and joint ventures</li>
+      </ul>
+    </article>
+
+    <article class="area">
+      <div class="area__img"><img src="https://tohth.com/assets/images/image05.jpg" alt="Family law and estate planning" loading="lazy"></div>
+      <h3>Family law &amp; estate planning</h3>
+      <p>Succession work for families across northern Perak, from drafting a first will through to
+        contested administration of an estate.</p>
+      <ul>
+        <li>Wills and asset distribution</li>
+        <li>Gifts, trusts and estate planning</li>
+        <li>Probate, letters of administration and estate administration</li>
+        <li>Representation in estate-related disputes</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ CALCULATOR ============ -->
+<section class="sec calc rise" id="calculator">
+  <div class="sec__head">
+    <p class="label">A quick estimate</p>
+    <hr class="brass-rule">
+    <h2>Stamp duty calculator</h2>
+    <p>Ballpark your Memorandum of Transfer and loan agreement stamp duty before you come in — based on
+      the current LHDN tiered rates and the first-time buyer exemption.</p>
+  </div>
+  <div class="calc__wrap">
+    <div>
+      <div class="field">
+        <label for="c-price">Property purchase price (RM)</label>
+        <input id="c-price" type="number" min="0" step="1000" placeholder="e.g. 480000">
+      </div>
+      <div class="field">
+        <label for="c-loan">Loan / financing amount (RM)</label>
+        <input id="c-loan" type="number" min="0" step="1000" placeholder="0 if a cash purchase">
+      </div>
+      <label class="check"><input id="c-first" type="checkbox"> First-time Malaysian home buyer</label>
+    </div>
+    <div class="calc__result">
+      <div class="calc__row"><span>MOT stamp duty (transfer)</span><span id="r-mot">RM 0</span></div>
+      <div class="calc__row"><span>Loan agreement stamp duty (0.5%)</span><span id="r-loan">RM 0</span></div>
+      <div class="calc__row calc__row--total"><span>Estimated total</span><span id="r-total">RM 0</span></div>
+      <p class="calc__note">Indicative only, based on the standard 1–4% tiered scale and the RM500,000
+        first-time-buyer exemption. Higher-value transactions may still qualify for a partial exemption
+        or relief under other schemes — this calculator doesn't cover those, so treat this as a starting
+        point and speak to us for a firm figure specific to your transaction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANK PANEL ============ -->
+<section class="sec panel rise" id="panel">
+  <div class="sec__head">
+    <p class="label">Appointments</p>
+    <hr class="brass-rule">
+    <h2>Panel lawyers</h2>
+    <p>Seventeen banking institutions, conventional and Islamic, together with the public sector
+      housing financier and the national credit guarantee corporation.</p>
+  </div>
+  <ul class="banks">
+    <li>AmBank (M) Berhad / AmBank Islamic Berhad</li>
+    <li>Public Bank Berhad / Public Islamic Bank Berhad</li>
+    <li>RHB Bank Berhad / RHB Islamic Bank Berhad</li>
+    <li>Malayan Banking Berhad / Maybank Islamic Berhad</li>
+    <li>OCBC Bank (Malaysia) Berhad / OCBC Al-Amin Bank (M) Berhad</li>
+    <li>Bank Kerjasama Rakyat Malaysia Berhad</li>
+    <li>Bank Pertanian Malaysia Berhad (Agrobank)</li>
+    <li>Hong Leong Bank Berhad / Hong Leong Islamic Bank Berhad</li>
+    <li>CIMB Bank Berhad / CIMB Islamic Bank Berhad</li>
+    <li>Bank Muamalat Malaysia Berhad</li>
+    <li>Bank Islam Malaysia Berhad</li>
+    <li>Affin Bank Berhad / Affin Islamic Bank Berhad</li>
+    <li>Lembaga Pembiayaan Perumahan Sektor Awam</li>
+    <li>MBSB Bank Berhad</li>
+    <li>Credit Guarantee Corporation Malaysia Berhad</li>
+    <li>Alliance Bank Malaysia Berhad</li>
+    <li>United Overseas Bank (Malaysia) Berhad</li>
+  </ul>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="sec rise" id="partners">
+  <div class="sec__head">
+    <p class="label">The people</p>
+    <hr class="brass-rule">
+    <h2>Partners</h2>
+    <p>Four partners lead a practice of thirteen lawyers and over a hundred support staff.</p>
+  </div>
+  <div class="people">
+
+    <article class="person">
+      <h3>Shaiful Rahimi bin Mohd Noor</h3>
+      <p class="meta">LLB (Malaya)<br>Joined 1999</p>
+      <p class="bio">Manages the operation of both the Taiping and Kuala Kangsar offices.</p>
+      <p class="prac">Conventional and Islamic banking and finance — facility agreements, security
+        documentation and debt recovery; conveyancing; probate and administration of estates.</p>
+    </article>
+
+    <article class="person">
+      <h3>Loh Yet Kong</h3>
+      <p class="meta">LLB<br>Member, Inner Temple</p>
+      <p class="bio">Full biography to follow.</p>
+    </article>
+
+    <article class="person">
+      <h3>Tan Soo Ling</h3>
+      <p class="meta">LLB (London)<br>Joined 2008</p>
+      <p class="bio">Manages the Parit Buntar and Bagan Serai offices.</p>
+      <p class="prac">Conveyancing; banking and finance; commercial loan, facility agreement and
+        security documentation; development projects and joint venture agreements.</p>
+    </article>
+
+    <article class="person">
+      <h3>Ang Kok Chun</h3>
+      <p class="meta">B.Juris (Hons) (Malaya) · CLP · LLM<br>Joined 2012</p>
+      <p class="bio">Oversees firm-wide operations.</p>
+      <p class="prac">Real estate and project conveyancing; banking and finance; corporate and
+        commercial, including M&amp;A and shareholders' agreements; family law and estate planning.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ OFFICES ============ -->
+<section class="sec offices rise" id="offices">
+  <div class="sec__head">
+    <p class="label">Where we are</p>
+    <hr class="brass-rule">
+    <h2>Six offices</h2>
+    <p>Every branch is staffed for conveyancing and loan documentation. Open the town nearest you.</p>
+  </div>
+
+  <details class="office" open>
+    <summary><span class="office__town">Taiping</span><span class="office__tag">Head office</span><span class="office__phone">05-807 1770</span></summary>
+    <div class="office__body">
+      <p><b>Address</b>No 16, Jalan Kota,<br>34000 Taiping, Perak<br><a href="https://www.google.com/maps/search/?api=1&query=No%2016%2C%20Jalan%20Kota%2C%2034000%20Taiping%2C%20Perak" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p><b>Contact</b>Tel 05-807 1770<br>Fax 05-807 8848</p>
+      <p><b>Open</b>Mon–Fri 9.00am–5.30pm<br>Sat 9.00am–1.00pm</p>
+    </div>
+  </details>
+
+  <details class="office">
+    <summary><span class="office__town">Ipoh</span><span class="office__phone">05-249 2587</span></summary>
+    <div class="office__body">
+      <p><b>Address</b>No 121–121A, Jalan Bahru,<br>off Jalan Kampar,<br>30250 Ipoh, Perak<br><a href="https://www.google.com/maps/search/?api=1&query=No%20121-121A%2C%20Jalan%20Bahru%2C%20off%20Jalan%20Kampar%2C%2030250%20Ipoh%2C%20Perak" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p><b>Contact</b>Tel 05-249 2587<br>Fax 05-249 2589</p>
+      <p><b>Open</b>Mon–Fri 9.00am–5.30pm</p>
+    </div>
+  </details>
+
+  <details class="office">
+    <summary><span class="office__town">Kuala Kangsar</span><span class="office__phone">05-777 7128</span></summary>
+    <div class="office__body">
+      <p><b>Address</b>77, 1st Floor,<br>Jalan Raja Bendahara, Fasa II,<br>33000 Kuala Kangsar, Perak<br><a href="https://www.google.com/maps/search/?api=1&query=77%2C%201st%20Floor%2C%20Jalan%20Raja%20Bendahara%2C%20Fasa%20II%2C%2033000%20Kuala%20Kangsar%2C%20Perak" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p><b>Contact</b>Tel 05-777 7128 / 05-777 6128<br>Fax 05-777 5128</p>
+      <p><b>Open</b>Mon–Fri 9.00am–5.30pm<br>Sat 9.00am–1.00pm</p>
+    </div>
+  </details>
+
+  <details class="office">
+    <summary><span class="office__town">Parit Buntar</span><span class="office__phone">05-716 0248</span></summary>
+    <div class="office__body">
+      <p><b>Address</b>No 18, Persiaran Perwira,<br>Pusat Bandar Baru,<br>34200 Parit Buntar, Perak<br><a href="https://www.google.com/maps/search/?api=1&query=No%2018%2C%20Persiaran%20Perwira%2C%20Pusat%20Bandar%20Baru%2C%2034200%20Parit%20Buntar%2C%20Perak" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p><b>Contact</b>Tel 05-716 0248<br>Fax 05-716 0246</p>
+      <p><b>Open</b>Mon–Fri 9.00am–5.30pm<br>Sat 9.00am–1.00pm</p>
+    </div>
+  </details>
+
+  <details class="office">
+    <summary><span class="office__town">Perai</span><span class="office__phone">04-398 1917</span></summary>
+    <div class="office__body">
+      <p><b>Address</b>1st Floor, 155, Medan Kikik 1,<br>Taman Inderawasih,<br>13600 Perai, Pulau Pinang<br><a href="https://www.google.com/maps/search/?api=1&query=1st%20Floor%2C%20155%2C%20Medan%20Kikik%201%2C%20Taman%20Inderawasih%2C%2013600%20Perai%2C%20Pulau%20Pinang" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p><b>Contact</b>Tel 04-398 1917<br>Fax 04-398 1921</p>
+      <p><b>Open</b>Mon–Fri 9.00am–5.30pm</p>
+    </div>
+  </details>
+
+  <details class="office">
+    <summary><span class="office__town">Bagan Serai</span><span class="office__phone">05-721 2233</span></summary>
+    <div class="office__body">
+      <p><b>Address</b>11, Jalan Siakap,<br>Kampung Alor Senggut,<br>34300 Bagan Serai, Perak<br><a href="https://www.google.com/maps/search/?api=1&query=11%2C%20Jalan%20Siakap%2C%20Kampung%20Alor%20Senggut%2C%2034300%20Bagan%20Serai%2C%20Perak" target="_blank" rel="noopener">View on Google Maps →</a></p>
+      <p><b>Contact</b>Tel 05-721 2233<br>Fax 05-721 5118</p>
+      <p><b>Open</b>Mon–Fri 9.00am–5.30pm<br>Sat 9.00am–1.00pm</p>
+    </div>
+  </details>
+</section>
+
+<!-- ============ QUOTATION ============ -->
+<section class="sec quote rise" id="quote">
+  <div class="sec__head">
+    <p class="label">Get in touch</p>
+    <hr class="brass-rule">
+    <h2>Request a quotation</h2>
+    <p>Tell us briefly what you need and which office suits you, and a partner will come back to you directly.</p>
+  </div>
+  <form name="quotation-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="quotation-request">
+    <p class="field field--hp"><label>Don't fill this in: <input name="bot-field"></label></p>
+
+    <div class="field">
+      <label for="q-name">Name</label>
+      <input id="q-name" name="name" type="text" required>
+    </div>
+    <div class="field">
+      <label for="q-phone">Phone</label>
+      <input id="q-phone" name="phone" type="tel" required>
+    </div>
+    <div class="field">
+      <label for="q-email">Email</label>
+      <input id="q-email" name="email" type="email" required>
+    </div>
+    <div class="field">
+      <label for="q-office">Nearest office</label>
+      <select id="q-office" name="office">
+        <option>Taiping</option>
+        <option>Ipoh</option>
+        <option>Kuala Kangsar</option>
+        <option>Parit Buntar</option>
+        <option>Perai</option>
+        <option>Bagan Serai</option>
+      </select>
+    </div>
+    <div class="field field--wide">
+      <label for="q-matter">What do you need help with?</label>
+      <select id="q-matter" name="matter">
+        <option>Conveyancing &amp; real estate</option>
+        <option>Banking &amp; finance</option>
+        <option>Corporate &amp; commercial</option>
+        <option>Family law &amp; estate planning</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="field field--wide">
+      <label for="q-message">A few details</label>
+      <textarea id="q-message" name="message" required></textarea>
+    </div>
+    <button class="btn btn--solid" type="submit">Send enquiry</button>
+  </form>
+</section>
+
+<!-- ============ NOTICES ============ -->
+<section class="sec legal rise" id="legal">
+  <div class="sec__head">
+    <p class="label">Notices</p>
+    <hr class="brass-rule">
+    <h2>Terms of use</h2>
+  </div>
+  <details>
+    <summary>Disclaimer</summary>
+    <div class="inner">
+      <p>This Website is provided on an "as is" basis and is for information only. Its content is of a general nature and does not in any way constitute legal or other professional advice or the provision of legal or professional services, and shall not be relied on as such. Toh Theam Hock &amp; Co. reserves the right to modify the content and information in this Website at any time.</p>
+      <p>This Website is not intended to solicit clients and it does not in any way create a solicitor-client relationship. There may be certain areas within this Website that provide general information on the law and as such you are advised to seek specific and formal advice on any transaction or matter that may be affected by the said information. While Toh Theam Hock &amp; Co. endeavours to keep the content and information in this Website accurate, Toh Theam Hock &amp; Co. does not warrant or guarantee the completeness, adequacy or currency of information contained in this Website. Certain parts of this Website may contain links to external internet sites. Toh Theam Hock &amp; Co. is not responsible for the content or privacy practices of any external Internet site.</p>
+      <p>To the widest extent permitted by law, any and all warranties whether express or implied (including without limitation any implied warranties of fitness for use, fitness for a particular purpose or non-infringement of third party rights) in relation to this Website (its content and information), its use, access, operation, availability, continuity or non-interruption are hereby excluded.</p>
+      <p>To the widest extent permitted by law, Toh Theam Hock &amp; Co. will not be responsible or liable for any loss or damage of any kind whatsoever (including without limitation consequential loss, loss of profits or goodwill, indirect, exemplary or punitive damages) suffered or incurred by you or any other person or entity, howsoever arising whether in contract, tort, negligence or otherwise, in connection with or as a result of:</p>
+      <ul>
+        <li>this Website (its content and information) and its use, access or operation;</li>
+        <li>any unauthorised access or alteration of your information submitted via email or this Website;</li>
+        <li>any third party websites linked to this Website including the information and content therein as well as use, access or operation thereof; and/or</li>
+        <li>the introduction of any malicious codes or other harmful components arising from use, access or operation of this Website or any third party websites linked to this Website.</li>
+      </ul>
+    </div>
+  </details>
+  <details>
+    <summary>Personal Data Protection Notice</summary>
+    <div class="inner">
+      <h4>Personal Data Protection Notice</h4>
+      <p>This Personal Data Notice ("Notice") describes how Toh Theam Hock &amp; Co. (a partnership incorporated under the laws of Malaysia with its place of business at 16, Jalan Kota, 34000 Taiping, Perak, Malaysia) uses your Personal Data.</p>
+      <p>By engaging Toh Theam Hock &amp; Co. to provide services or by interacting with Toh Theam Hock &amp; Co. either at our events, conferences, seminars, talks or otherwise, you consent to the processing of your Personal Data by Toh Theam Hock &amp; Co. and all persons involved in the provision of services by Toh Theam Hock &amp; Co.</p>
+      <p>In the event of any conflict between the English and other language versions, the English version shall prevail. Toh Theam Hock &amp; Co. shall have the right to modify, update or amend the terms of this Notice at any time. By continuing to communicate with Toh Theam Hock &amp; Co. or by continuing to use Toh Theam Hock &amp; Co.'s services following the modifications, updates or amendments to this Notice, this shall signify your acceptance of such modifications, updates or amendments.</p>
+
+      <h4>Collection of Personal Data</h4>
+      <p>1. "Personal Data" means information about you which you have provided to Toh Theam Hock &amp; Co., such as your name, address, telephone number, identification card number, email address, your personal preferences, particulars of your spouse or family members, and bank account information and any information which may identify you, your spouse or family members that has been or may be collected, stored, used and processed by Toh Theam Hock &amp; Co. from time to time.</p>
+      <p>2. In addition to the Personal Data you provide to Toh Theam Hock &amp; Co. directly (i.e. during your communications with Toh Theam Hock &amp; Co. and/or when you engage Toh Theam Hock &amp; Co. to provide services), Toh Theam Hock &amp; Co. may also collect your Personal Data from a variety of sources, including without limitation at any events, conferences, seminars or talks organised or sponsored by Toh Theam Hock &amp; Co.</p>
+      <p>3. The provision of your Personal Data is voluntary. However, if you do not provide your Personal Data, Toh Theam Hock &amp; Co. may not be able to (i) communicate with you; (ii) provide you the services you require; or (iii) process your Personal Data in connection with any internship, pupillage or employment opportunities with Toh Theam Hock &amp; Co.</p>
+
+      <h4>Purposes of Processing</h4>
+      <p>4. Toh Theam Hock &amp; Co. may use and process your Personal Data for the purposes relating to the services you have requested and for the business activities of Toh Theam Hock &amp; Co. which shall include, without limitation: (a) to communicate with you; (b) to respond to questions and comments from you; (c) to assess your suitability for internship, pupillage or employment; (d) for internal administrative purposes; (e) to provide information to regulatory and governmental authorities in order to comply with statutory and government requirements, including disclosure to the Unclaimed Money Management Division of the Accountant General's Department of Malaysia ("AGD") of your information as required pursuant to the Unclaimed Moneys Act 1965 and its attendant regulations in the event of any unclaimed monies on your part; (f) for Toh Theam Hock &amp; Co. to comply with its obligations under law, including compliance with laws relating to evidence; and you agree and consent to Toh Theam Hock &amp; Co. using and processing your Personal Data in the manner as identified in this Notice.</p>
+
+      <h4>Other purposes</h4>
+      <p>5. Toh Theam Hock &amp; Co. may also use and process your data for other purposes such as: (a) to send you materials such as newsletters, articles, write-ups as well as other updates; (b) to distribute information or details of events, seminars, conferences and talks which may of interest to you; (c) to send as potential referees to (i) editors/researchers in ranking legal publications and journals; (ii) potential clients who request for referees of past work in requests for proposals, tenders, submissions; by way of email or mail.</p>
+      <p>6. If you do not consent to Toh Theam Hock &amp; Co. processing your Personal Data for the purposes listed in Section 5, please notify Toh Theam Hock &amp; Co. using the contact details stated in Section 11 below.</p>
+
+      <h4>Disclosure to Third Parties, and Transfer of Personal Data out of Malaysia</h4>
+      <p>7. As Toh Theam Hock &amp; Co.'s information technology storage facilities and servers may be located in other jurisdictions, your Personal Data may be transferred to, stored, used and processed in a jurisdiction other than Malaysia. Further, your personal data may be transferred out of Malaysia for the purposes as described in Section 5(c) where such ranking legal publications and journals and/or potential clients are located outside of Malaysia. You understand and consent to the transfer of your Personal Data out of Malaysia as described herein.</p>
+      <p>8. Toh Theam Hock &amp; Co. may engage other companies, service providers or individuals to perform functions on Toh Theam Hock &amp; Co.'s behalf, and consequently may provide access or disclose to your Personal Data to the following third parties (who may be located outside of Malaysia and/or use and process your Personal Data outside of Malaysia) (not exhaustive): (a) information technology (IT) service providers; (b) data entry service providers; (c) storage facility providers; (d) banks and financial institutions; (e) insurance providers; (f) any professional advisors and external auditors; (g) regulatory and governmental authorities in order to comply with statutory and government requirements, including to the AGD for the purposes as described in Section 4 above.</p>
+
+      <h4>Security of your Personal Data</h4>
+      <p>9. We are committed to maintaining the security of your Personal Data in accordance with the data security requirements under the Personal Data Protection Act 2010 (PDPA), as well as our internal policies.</p>
+
+      <h4>Retention Period</h4>
+      <p>10. We process your Personal Data only for as long as necessary to fulfil the purposes stated above, and thereafter for as long as we are required to do so under the relevant statutory limitation periods, applicable laws and regulations, as well as our internal policies. Where the Personal Data is no longer required for the purposes stated above or the relevant legal requirements, we will delete the personal data.</p>
+
+      <h4>Access &amp; Correction Requests and Inquiries</h4>
+      <p>11. Subject to any exceptions under applicable laws, you may at any time hereafter request: (i) for access to your Personal Data (ii) for correction or rectification of your Personal Data; (iii) to limit the processing of your Personal Data; or (iv) to seek further information from Toh Theam Hock &amp; Co. regarding the processing of your Personal Data by contacting the firm at its Taiping office.</p>
+      <p>12. In respect of your right to access and/or correct your Personal Data, Toh Theam Hock &amp; Co. has the right to refuse your requests to access and/or make any correction to your Personal Data for the reasons permitted under law, such as where the expense of providing access to you is disproportionate to the risks to your privacy.</p>
+
+      <h4>Notis Perlindungan Data Peribadi</h4>
+      <p>Notis Data Peribadi ini ("Notis") menerangkan bagaimana Toh Theam Hock &amp; Co. (sebuah firma perkongsian yang diperbadankan di bawah undang-undang Malaysia dengan alamat perniagaannya di 16, Jalan Kota, 34000 Taiping, Perak, Malaysia) menggunakan Data Peribadi anda.</p>
+      <p>Dengan melantik Toh Theam Hock &amp; Co. untuk menyediakan perkhidmatan atau dengan berhubung dengan Toh Theam Hock &amp; Co. sama ada di acara, persidangan, seminar, ceramah atau selainnya, anda bersetuju dengan pemprosesan Data Peribadi anda oleh Toh Theam Hock &amp; Co. dan semua individu yang terlibat dalam penyediaan perkhidmatan oleh Toh Theam Hock &amp; Co.</p>
+      <p>Jika terdapat sebarang percanggahan antara versi Bahasa Inggeris dan versi dalam bahasa lain, versi Bahasa Inggeris akan diguna pakai. Toh Theam Hock &amp; Co. berhak mengubah suai, mengemas kini atau meminda terma-terma Notis ini pada bila-bila masa.</p>
+      <p>1. "Data Peribadi" bermaksud maklumat mengenai anda yang telah anda berikan kepada Toh Theam Hock &amp; Co., seperti nama, alamat, nombor telefon, nombor kad pengenalan, alamat e-mel, pilihan peribadi anda, butir-butir pasangan atau ahli-ahli keluarga anda, maklumat bank akaun, dan sebarang maklumat yang boleh mengenal pasti anda, pasangan anda, atau ahli-ahli keluarga anda yang telah atau akan dikumpul, disimpan, digunakan dan diproses oleh Toh Theam Hock &amp; Co. dari semasa ke semasa.</p>
+      <p>2. Selain daripada Data Peribadi yang anda berikan kepada Toh Theam Hock &amp; Co. secara langsung, Toh Theam Hock &amp; Co. juga mungkin mengumpul Data Peribadi anda daripada pelbagai sumber, termasuk tetapi tidak terhad kepada mana-mana acara, persidangan, seminar atau ceramah yang diatur atau ditaja oleh Toh Theam Hock &amp; Co.</p>
+      <p>3. Pemberian Data Peribadi anda adalah secara sukarela. Walau bagaimanapun, jika anda tidak memberi Data Peribadi anda, Toh Theam Hock &amp; Co. mungkin tidak dapat (i) berkomunikasi dengan anda; (ii) menyediakan perkhidmatan yang anda perlukan; atau (iii) memproses Data Peribadi anda untuk tujuan berkaitan dengan mana-mana peluang latihan amali, latihan dalam kamar atau penggajian dengan Toh Theam Hock &amp; Co.</p>
+      <p>4. Toh Theam Hock &amp; Co. boleh menggunakan dan memproses Data Peribadi anda untuk tujuan yang berkaitan dengan perkhidmatan yang anda minta, serta untuk aktiviti-aktiviti perniagaan Toh Theam Hock &amp; Co.</p>
+      <p>5. Toh Theam Hock &amp; Co. juga boleh menggunakan dan memproses data anda untuk tujuan selainnya seperti menghantar bahan-bahan berita, artikel, dan mengedar maklumat acara yang mungkin anda minati.</p>
+      <p>6. Jika anda tidak bersetuju dengan pemprosesan Data Peribadi anda untuk tujuan yang disenaraikan dalam Seksyen 5, sila maklumkan kepada Toh Theam Hock &amp; Co.</p>
+      <p>7. Data Peribadi anda mungkin dipindahkan, disimpan, digunakan dan diproses di bidang kuasa selain daripada Malaysia sekiranya kemudahan penyimpanan teknologi maklumat dan pelayan terletak di luar negara.</p>
+      <p>8. Toh Theam Hock &amp; Co. mungkin melantik syarikat, penyedia perkhidmatan atau individu lain untuk menjalankan fungsi bagi pihak Toh Theam Hock &amp; Co., termasuk penyedia IT, penyedia perkhidmatan kemasukan data, bank dan institusi kewangan, penasihat profesional, serta pihak berkuasa kawal selia dan kerajaan.</p>
+      <p>9. Kami komited untuk mengekalkan keselamatan Data Peribadi anda selaras dengan keperluan keselamatan data di bawah Akta Perlindungan Data Peribadi 2010 (PDPA), serta dasar dalaman kami.</p>
+      <p>10. Kami memproses Data Peribadi anda hanya selama mana yang perlu untuk memenuhi tujuan-tujuan yang dinyatakan di atas, dan selepas itu selama mana yang dikehendaki mengikut tempoh had undang-undang yang berkaitan.</p>
+      <p>11. Anda boleh pada bila-bila masa selepas ini memohon akses kepada, atau untuk pembaikan dan pembetulan Data Peribadi anda atau menghadkan pemprosesan Data Peribadi anda, dengan menghubungi Toh Theam Hock &amp; Co.</p>
+      <p>12. Toh Theam Hock &amp; Co. berhak menolak permohonan anda untuk mengakses dan/atau membuat sebarang pembetulan pada Data Peribadi anda atas alasan-alasan yang dibenarkan oleh undang-undang.</p>
+    </div>
+  </details>
+</section>
+
+<footer>
+  <div class="foot__grid">
+    <div>
+      <div class="foot__cn">杜添福律师楼</div>
+      <h4 style="margin-top:1rem">Toh Theam Hock &amp; Co</h4>
+      <p>Advocates &amp; Solicitors · Peguambela &amp; Peguamcara</p>
+      <p>No 16, Jalan Kota, 34000 Taiping, Perak, Malaysia</p>
+      <p>Tel 05-807 1770 · Fax 05-807 8848</p>
+    </div>
+    <div>
+      <h4>Offices</h4>
+      <ul>
+        <li>Taiping (HQ)</li><li>Ipoh</li><li>Kuala Kangsar</li>
+        <li>Parit Buntar</li><li>Perai</li><li>Bagan Serai</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Practice</h4>
+      <ul>
+        <li>Conveyancing &amp; real estate</li><li>Banking &amp; finance</li>
+        <li>Corporate &amp; commercial</li><li>Family law &amp; estate planning</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <span>© <span id="yr">2026</span> Toh Theam Hock &amp; Co. All rights reserved.</span>
+    <span>Established 1958 · Taiping, Perak</span>
+  </div>
+</footer>
+
+<script>
+  var y = new Date().getFullYear();
+  document.getElementById('years').textContent = y - 1958;
+  document.getElementById('yr').textContent = y;
+
+  // Stamp duty calculator
+  function motDuty(price) {
+    var tiers = [[100000, .01], [400000, .02], [500000, .03], [Infinity, .04]];
+    var remaining = price, total = 0;
+    for (var i = 0; i < tiers.length && remaining > 0; i++) {
+      var amt = Math.min(remaining, tiers[i][0]);
+      total += amt * tiers[i][1];
+      remaining -= amt;
+    }
+    return total;
+  }
+  function fmt(n) { return 'RM ' + Math.round(n).toLocaleString('en-MY'); }
+  function runCalc() {
+    var price = parseFloat(document.getElementById('c-price').value) || 0;
+    var loan = parseFloat(document.getElementById('c-loan').value) || 0;
+    var firstTime = document.getElementById('c-first').checked;
+    var mot = (firstTime && price <= 500000) ? 0 : motDuty(price);
+    var loanDuty = (firstTime && loan <= 500000) ? 0 : loan * .005;
+    document.getElementById('r-mot').textContent = fmt(mot);
+    document.getElementById('r-loan').textContent = fmt(loanDuty);
+    document.getElementById('r-total').textContent = fmt(mot + loanDuty);
+  }
+  ['c-price', 'c-loan', 'c-first'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', runCalc);
+  });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.rise').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
